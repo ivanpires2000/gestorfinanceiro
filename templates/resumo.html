@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo Financeiro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Resumo Financeiro</h1>
+    <h2>Despesas</h2>
+    <ul>
+        {% for despesa in despesas %}
+            <li>{{ despesa.descricao }}: R$ {{ despesa.valor }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Receitas</h2>
+    <ul>
+        {% for receita in receitas %}
+            <li>{{ receita.descricao }}: R$ {{ receita.valor }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Saldo Líquido: R$ {{ saldo_liquido }}</h2>
+    <h2><a href="/">Voltar</a></h2>
+</body>
+</html>

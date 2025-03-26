@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor Financeiro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Gestor Financeiro</h1>
+    <h2>Registrar Despesa</h2>
+    <form action="/registrar_despesa" method="post">
+        <input type="text" name="descricao" placeholder="Descrição" required>
+        <input type="number" name="valor" placeholder="Valor" required>
+        <button type="submit">Registrar Despesa</button>
+    </form>
+
+    <h2>Registrar Receita</h2>
+    <form action="/registrar_receita" method="post">
+        <input type="text" name="descricao" placeholder="Descrição" required>
+        <input type="number" name="valor" placeholder="Valor" required>
+        <button type="submit">Registrar Receita</button>
+    </form>
+
+    <h2><a href="/resumo">Ver Resumo Financeiro</a></h2>
+</body>
+</html>

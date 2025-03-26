@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar Entradas e Saídas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Consultar Entradas e Saídas</h1>
+    <form action="/consultar" method="post">
+        <label for="periodo">Escolha um período:</label>
+        <select name="periodo" id="periodo">
+            <option value="dia">Dia</option>
+            <option value="semana">Semana</option>
+            <option value="mes">Mês</option>
+            <option value="ano">Ano</option>
+        </select>
+        <button type="submit">Consultar</button>
+    </form>
+    <h2><a href="/">Voltar</a></h2>
+</body>
+</html>

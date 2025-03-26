@@ -3,21 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consultar Entradas e Saídas</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Consultar Despesas e Receitas</title>
 </head>
 <body>
-    <h1>Consultar Entradas e Saídas</h1>
-    <form action="/consultar" method="post">
-        <label for="periodo">Escolha um período:</label>
+    <h1>Consultar Despesas e Receitas</h1>
+    <form action="/consultar" method="POST">
+        <label for="data">Selecione a data:</label>
+        <input type="date" name="data" id="data" required>
+        <label for="periodo">Selecione o período:</label>
         <select name="periodo" id="periodo">
-            <option value="dia">Dia</option>
-            <option value="semana">Semana</option>
-            <option value="mes">Mês</option>
-            <option value="ano">Ano</option>
+            <option value="dia">Último Dia</option>
+            <option value="semana">Última Semana</option>
+            <option value="mes">Último Mês</option>
+            <option value="ano">Último Ano</option>
         </select>
         <button type="submit">Consultar</button>
     </form>
-    <h2><a href="/">Voltar</a></h2>
+    <a href="/">Voltar para o Início</a>
 </body>
 </html>

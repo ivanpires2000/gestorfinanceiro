@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,20 +7,23 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Gestor Financeiro</h1>
-    <h2>Registrar Despesa</h2>
-    <form action="/registrar_despesa" method="post">
-        <input type="text" name="descricao" placeholder="Descrição" required>
-        <input type="number" name="valor" placeholder="Valor" required>
+    <h1>Bem-vindo ao Gestor Financeiro</h1>
+    <form action="/registrar_despesa" method="POST" enctype="multipart/form-data">
+        <label for="data_despesa">Data da Despesa:</label>
+        <input type="date" name="data_despesa" id="data_despesa" required>
+        <input type="text" name="descricao" placeholder="Descrição da despesa" required>
+        <input type="number" name="valor" placeholder="Valor da despesa" required>
         <button type="submit">Registrar Despesa</button>
     </form>
-
-    <h2>Registrar Receita</h2>
-    <form action="/registrar_receita" method="post">
-        <input type="text" name="descricao" placeholder="Descrição" required>
-        <input type="number" name="valor" placeholder="Valor" required>
+    <form action="/registrar_receita" method="POST" enctype="multipart/form-data">
+        <label for="data_receita">Data da Receita:</label>
+        <input type="date" name="data_receita" id="data_receita" required>
+        <input type="text" name="descricao" placeholder="Descrição da receita" required>
+        <input type="number" name="valor" placeholder="Valor da receita" required>
         <button type="submit">Registrar Receita</button>
     </form>
+    <h2><a href="/consultar">Consultar Despesas e Receitas</a></h2>
+
 
     <h2><a href="/resumo">Ver Resumo Financeiro</a></h2>
 </body>

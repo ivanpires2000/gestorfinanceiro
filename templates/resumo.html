@@ -3,26 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resumo Financeiro</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Dashboard Financeiro</title>
 </head>
 <body>
-    <h1>Resumo Financeiro</h1>
-    <h2>Despesas</h2>
-    <ul>
-        {% for despesa in despesas %}
-            <li>{{ despesa.descricao }}: R$ {{ despesa.valor }}</li>
-        {% endfor %}
-    </ul>
-
-    <h2>Receitas</h2>
-    <ul>
-        {% for receita in receitas %}
-            <li>{{ receita.descricao }}: R$ {{ receita.valor }}</li>
-        {% endfor %}
-    </ul>
-
-    <h2>Saldo Líquido: R$ {{ saldo_liquido }}</h2>
-    <h2><a href="/">Voltar</a></h2>
+    <h1>Dashboard Financeiro</h1>
+    <div>
+        <h2>Resumo</h2>
+        <h3>Total de Despesas: R$ {{ total_despesas }}</h3>
+        <h3>Total de Receitas: R$ {{ total_receitas }}</h3>
+        <h3>Saldo Líquido: R$ {{ saldo_liquido }}</h3>
+    </div>
+    <div>
+        <h2>Despesas</h2>
+        <ul>
+            {% for despesa in despesas %}
+                <li>{{ despesa.descricao }}: R$ {{ despesa.valor }} ({{ despesa.data }})</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div>
+        <h2>Receitas</h2>
+        <ul>
+            {% for receita in receitas %}
+                <li>{{ receita.descricao }}: R$ {{ receita.valor }} ({{ receita.data }})</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <a href="/">Voltar para o Início</a>
 </body>
 </html>
